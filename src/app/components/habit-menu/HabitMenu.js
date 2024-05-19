@@ -6,7 +6,7 @@ export default function HabitMenu() {
   const { setSelectedOption } = useGlobalState();
 
   return (
-    <div className="habit-menu h-3/6  w-[185px] bg-orange-400 space-y-2  ">
+    <div className="habit-menu h-3/6  w-[220px] bg-orange-400 space-y-2  ">
       <button
         className="btn btn-ghost w-full"
         onClick={() => setSelectedOption(1)}
