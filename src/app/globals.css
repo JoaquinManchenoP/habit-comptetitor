@@ -31,11 +31,6 @@
   fill: #ff7a00; /* Tailwind class for heatmap-scale-4 */
 }
 
-.react-calendar-heatmap text {
-  font-size: 12px;
-  fill: #767676;
-}
-
 .react-calendar-heatmap .react-calendar-heatmap__month-label {
   font-weight: bold;
 }

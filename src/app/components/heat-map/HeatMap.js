@@ -9,21 +9,23 @@ export default function HeatMap({ values, startDate, endDate }) {
     if (!value) {
       return "heatmap-empty";
     }
-    if (value.count >= 8) {
-      return "heatmap-scale-4";
-    } else if (value.count >= 6) {
-      return "heatmap-scale-3";
-    } else if (value.count >= 4) {
-      return "heatmap-scale-2";
-    } else if (value.count >= 2) {
-      return "heatmap-scale-1";
-    } else {
-      return "heatmap-scale-0";
+    switch (true) {
+      case value.count >= 8:
+        return "heatmap-scale-4";
+      case value.count >= 6:
+        return "heatmap-scale-3";
+      case value.count >= 4:
+        return "heatmap-scale-2";
+      case value.count >= 2:
+        return "heatmap-scale-1";
+      default:
+        return "heatmap-scale-0";
     }
   };
+  const weekdayLabels = ["S", "M", "T", "W", "T", "F", "S"];
 
   return (
-    <div className="p-4 m-4">
+    <div className=" mr-8">
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}
@@ -39,8 +41,9 @@ export default function HeatMap({ values, startDate, endDate }) {
                 : "No data",
           };
         }}
+        weekdayLabels={weekdayLabels}
         showWeekdayLabels
-        gutterSize={0.8} //Space between cells of the heatmap
+        gutterSize={1} //Space between cells of the heatmap
         transformDayElement={(rect, value) =>
           React.cloneElement(rect, {
             // how round the cells are

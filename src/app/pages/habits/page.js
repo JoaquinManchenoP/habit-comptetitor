@@ -2,7 +2,8 @@
 import React from "react";
 import HabitMenu from "@/app/components/habit-menu/HabitMenu";
 import { useGlobalState } from "@/app/context/GlobalContext";
-import HeatMap from "../../components/heat-map/HeatMap";
+import { subMonths } from "date-fns";
+import HabitCard from "@/app/components/habit-card/HabitCard";
 
 const activityData = [
   { date: "2024-01-2", count: 2 },
@@ -11,8 +12,8 @@ const activityData = [
   // More data...
 ];
 const startAndEndDate = {
-  startDate: new Date("2024-01-01"),
-  endDate: new Date("2024-06-31"),
+  startDate: subMonths(new Date(), 6),
+  endDate: new Date(),
 };
 
 export default function page() {
@@ -22,9 +23,9 @@ export default function page() {
     <div className="home-page h-full w-full flex">
       <HabitMenu />
       <div className="content h-full w-full bg-blue-400">
-        <div className="h-[800px] w-9/12 bg-purple-400">
+        <div className="h-[800px] w-full bg-orange-400">
           {selectedOption === 1 && (
-            <HeatMap
+            <HabitCard
               activityData={activityData}
               startDate={startAndEndDate.startDate}
               endDate={startAndEndDate.endDate}
