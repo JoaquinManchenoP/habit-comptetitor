@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "heatmap-empty": "#ebedf0",
+        "heatmap-scale-0": "#d6e685",
+        "heatmap-scale-1": "#8cc665",
+        "heatmap-scale-2": "#44a340",
+        "heatmap-scale-3": "#1e6823",
+        "heatmap-scale-4": "#0d4d13",
+      },
       spacing: {
         0.2: "1.5px",
       },
