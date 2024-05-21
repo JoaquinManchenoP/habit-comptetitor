@@ -40,13 +40,17 @@ export default function HeatMap({ values, startDate, endDate }) {
           };
         }}
         showWeekdayLabels
-        gutterSize={3} //Spae between cells of the calendar
+        gutterSize={0.8} //Space between cells of the heatmap
         transformDayElement={(rect, value) =>
           React.cloneElement(rect, {
             // how round the cells are
             rx: 1,
             ry: 1,
             className: `${rect.props.className} m-1`,
+            style: {
+              width: "9px", // Adjust the width
+              height: "9px",
+            },
           })
         }
       />

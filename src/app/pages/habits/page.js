@@ -7,6 +7,7 @@ import HeatMap from "../../components/heat-map/HeatMap";
 const activityData = [
   { date: "2024-01-2", count: 2 },
   { date: "2024-01-10", count: 1 },
+  { date: "2024-01-27", count: 8 },
   // More data...
 ];
 const startAndEndDate = {

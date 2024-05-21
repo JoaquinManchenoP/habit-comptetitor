@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 .react-calendar-heatmap .react-calendar-heatmap__cell {
-  rx: 3; /* Adjust the roundness */
-  ry: 3;
-  transform: translate(2px, 2px); /* Move the cells to create spacing */
-  stroke: white; /* Add a stroke to enhance cell separation */
-}
-
-.react-calendar-heatmap .react-calendar-heatmap__cell {
-  width: 10px; /* Adjust cell width */
-  height: 10px; /* Adjust cell height */
+  width: 7px; /* Adjust cell width */
+  height: 7px; /* Adjust cell height */
 }
 /* src/styles/global.css */
 .heatmap-empty {
@@ -19,23 +12,23 @@
 }
 
 .heatmap-scale-0 {
-  fill: #d6e685; /* Tailwind class for heatmap-scale-0 */
+  fill: #ffe601; /* Tailwind class for heatmap-scale-0 */
 }
 
 .heatmap-scale-1 {
-  fill: #8cc665; /* Tailwind class for heatmap-scale-1 */
+  fill: #ffc800; /* Tailwind class for heatmap-scale-1 */
 }
 
 .heatmap-scale-2 {
-  fill: #44a340; /* Tailwind class for heatmap-scale-2 */
+  fill: #ffaa00; /* Tailwind class for heatmap-scale-2 */
 }
 
 .heatmap-scale-3 {
-  fill: #1e6823; /* Tailwind class for heatmap-scale-3 */
+  fill: #ff9a00; /* Tailwind class for heatmap-scale-3 */
 }
 
 .heatmap-scale-4 {
-  fill: #0d4d13; /* Tailwind class for heatmap-scale-4 */
+  fill: #ff7a00; /* Tailwind class for heatmap-scale-4 */
 }
 
 .react-calendar-heatmap text {
