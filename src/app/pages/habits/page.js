@@ -9,6 +9,20 @@ const activityData = [
   { date: "2024-01-2", count: 2 },
   { date: "2024-01-10", count: 1 },
   { date: "2024-01-27", count: 8 },
+  { date: "2024-03-10", count: 5 },
+  { date: "2024-03-12", count: 5 },
+  { date: "2024-03-11", count: 5 },
+  { date: "2024-03-14", count: 5 },
+  { date: "2024-03-16", count: 5 },
+  { date: "2024-03-17", count: 5 },
+  { date: "2024-03-18", count: 5 },
+  { date: "2024-04-10", count: 5 },
+  { date: "2024-04-12", count: 5 },
+  { date: "2024-04-11", count: 5 },
+  { date: "2024-04-14", count: 5 },
+  { date: "2024-04-16", count: 5 },
+  { date: "2024-04-17", count: 5 },
+  { date: "2024-04-18", count: 5 },
   // More data...
 ];
 const startAndEndDate = {

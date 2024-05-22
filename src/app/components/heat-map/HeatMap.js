@@ -10,11 +10,11 @@ export default function HeatMap({ values, startDate, endDate }) {
       return "heatmap-empty";
     }
     switch (true) {
-      case value.count >= 8:
+      case value.count >= 5:
         return "heatmap-scale-4";
-      case value.count >= 6:
-        return "heatmap-scale-3";
       case value.count >= 4:
+        return "heatmap-scale-3";
+      case value.count >= 3:
         return "heatmap-scale-2";
       case value.count >= 2:
         return "heatmap-scale-1";
