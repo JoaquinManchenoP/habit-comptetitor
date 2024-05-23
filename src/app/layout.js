@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <div className="h-screen w-full bg-purple-400 flex flex-col justify-center items-center">
             <div className="header h-20 w-full bg-green-400">page header</div>
-            <div className="content h-full w-10/12 bg-red-500">{children}</div>
+            <div className="content h-full w-11/12 bg-red-500">{children}</div>
           </div>
         </body>
       </GlobalStateProvider>

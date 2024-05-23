@@ -23,6 +23,7 @@ const activityData = [
   { date: "2024-04-16", count: 5 },
   { date: "2024-04-17", count: 5 },
   { date: "2024-04-18", count: 5 },
+  { date: "2024-05-23", count: 3 },
   // More data...
 ];
 const startAndEndDate = {
@@ -37,14 +38,24 @@ export default function page() {
     <div className="home-page h-full w-full flex">
       <HabitMenu />
       <div className="content h-full w-full bg-blue-400">
-        <div className="h-[800px] w-full bg-orange-400">
+        <div className="h-[800px] w-full bg-orange-400 flex">
           {selectedOption === 1 && (
-            <HabitCard
-              activityData={activityData}
-              startDate={startAndEndDate.startDate}
-              endDate={startAndEndDate.endDate}
-              values={activityData}
-            />
+            <div className="habit-card h-full w-full  bg-red-400">
+              <div className="habit-card-container flex justify-center space-x-7">
+                <HabitCard
+                  activityData={activityData}
+                  startDate={startAndEndDate.startDate}
+                  endDate={startAndEndDate.endDate}
+                  values={activityData}
+                />
+                <HabitCard
+                  activityData={activityData}
+                  startDate={startAndEndDate.startDate}
+                  endDate={startAndEndDate.endDate}
+                  values={activityData}
+                />
+              </div>
+            </div>
           )}
           {selectedOption === 2 && <div>Leaderboards</div>}
           {selectedOption === 3 && <div>Option</div>}

@@ -30,13 +30,18 @@ export default function HabitTimeline({ activityData }) {
   console.log("positionpercent", positionPercent);
 
   return (
-    <div className="h-[150px] w-full relative bg-gray-100">
+    <div className="h-[40px] w-full relative bg-blue-100">
       <motion.div
-        className="absolute top-10 transform -translate-y-1/2 h-8 w-8 bg-blue-500 rounded-full"
+        className="absolute top-0 transform -translate-y-1/2 h-6 w-8 bg-blue-500"
         style={{ left: `${positionPercent}%`, zIndex: 1 }} // Ensure the avatar is above the line
         initial={{ x: -65, y: 0 }}
         animate={{ x: 0, y: 0 }}
-        transition={{ type: "spring", stiffness: 100 }}
+        transition={{
+          type: "spring",
+          duration: 8,
+          bounce: 0.4,
+          stiffness: 20,
+        }}
       />
       <div className="absolute w-full h-1 bg-gray-300 top-1/2 transform -translate-y-1/2" />
     </div>
