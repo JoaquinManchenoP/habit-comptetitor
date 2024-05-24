@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { useGlobalState } from "@/app/context/GlobalContext";
 
 export default function HabitMenu() {

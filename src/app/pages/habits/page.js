@@ -32,7 +32,6 @@ const activityData = [
   { date: "2024-04-18", count: 1 },
   { date: "2024-04-19", count: 1 },
   { date: "2024-04-20", count: 1 },
-
   // More data...
 ];
 
@@ -43,7 +42,7 @@ const breakpoints = {
 export default function page() {
   const { width } = useWindowSize();
   const { selectedOption } = useGlobalState();
-  const [smallScreen, setSmallScreen] = useState(true);
+  const [smallScreen, setSmallScreen] = useState(false);
 
   const startAndEndDate = {
     startDate: subMonths(new Date(), 6),
@@ -72,7 +71,7 @@ export default function page() {
       <div className="content h-full w-full bg-blue-400">
         <div className="h-[800px] w-full bg-orange-400 flex">
           {selectedOption === 1 && (
-            <div className="habit-card h-full w-full  bg-red-400">
+            <div className="habit-card h-full w-full  bg-red-400 mt-8">
               <div className="habit-card-container flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-10 lg:flex-row lg:space-x-10 xs:items-center  ">
                 <HabitCard
                   activityData={activityData}

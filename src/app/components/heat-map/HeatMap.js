@@ -47,12 +47,12 @@ export default function HeatMap({ values, startDate, endDate }) {
         transformDayElement={(rect, value) =>
           React.cloneElement(rect, {
             // how round the cells are
-            rx: 1,
-            ry: 1,
+            rx: 2,
+            ry: 2,
             className: `${rect.props.className} m-1`,
             style: {
-              width: "9px", // Adjust the width
-              height: "9px",
+              width: "9.5px", // Adjust the width
+              height: "9.5px",
             },
           })
         }
