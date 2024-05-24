@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { GlobalStateProvider } from "./context/GlobalContext";
 import "./globals.css";
+import Header from "./components/header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <GlobalStateProvider>
         <body className={inter.className}>
-          <div className="h-screen w-full bg-purple-400 flex flex-col justify-center items-center">
-            <div className="header h-20 w-full bg-green-400">page header</div>
-            <div className="content h-full w-11/12 bg-red-500">{children}</div>
+          <Header />
+          <div className="h-screen w-full flex flex-col justify-center items-center ">
+            <div className="content h-full w-11/12">{children}</div>
           </div>
         </body>
       </GlobalStateProvider>
