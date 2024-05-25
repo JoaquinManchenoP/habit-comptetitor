@@ -4,16 +4,15 @@ import { motion } from "framer-motion";
 
 export default function HabitTimeline({ activityData }) {
   const todaysDate = new Date();
-  const threeMonthsAgo = subMonths(todaysDate, 3);
+  const oneMonthAgo = subMonths(todaysDate, 1);
 
   // Calculate the number of days in the last three months
-  const numDaysLastThreeMonths =
-    differenceInDays(todaysDate, threeMonthsAgo) + 1;
+  const numDaysOneMonthAgo = differenceInDays(todaysDate, oneMonthAgo) + 1;
 
   // Filter data to include only the last three months
   const filteredData = activityData.filter((item) => {
     const itemDate = parseISO(item.date);
-    return isAfter(itemDate, threeMonthsAgo) && isAfter(todaysDate, itemDate);
+    return isAfter(itemDate, oneMonthAgo) && isAfter(todaysDate, itemDate);
   });
 
   // Calculate the count total within the last three months
@@ -23,7 +22,7 @@ export default function HabitTimeline({ activityData }) {
   );
 
   // Calculate total possible count within the last three months
-  const totalPossibleCount = numDaysLastThreeMonths * 5;
+  const totalPossibleCount = numDaysOneMonthAgo * 5;
 
   // Calculate the position percentage of the avatar
   const positionPercent = (actualCountTotal / totalPossibleCount) * 100;
