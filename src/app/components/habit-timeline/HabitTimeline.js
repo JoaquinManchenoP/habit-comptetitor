@@ -22,7 +22,7 @@ export default function HabitTimeline({ activityData }) {
   );
 
   // Calculate total possible count within the last three months
-  const totalPossibleCount = numDaysOneMonthAgo * 5;
+  const totalPossibleCount = numDaysOneMonthAgo * 3;
 
   // Calculate the position percentage of the avatar
   const positionPercent = (actualCountTotal / totalPossibleCount) * 100;

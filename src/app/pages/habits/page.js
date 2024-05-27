@@ -9,23 +9,23 @@ import DropDownMenu from "@/app/components/drop-down-menu/DropDownMenu";
 const activityData = [
   { date: "2024-01-2", count: 2 },
   { date: "2024-01-10", count: 1 },
-  { date: "2024-01-27", count: 8 },
-  { date: "2024-04-28", count: 5 },
-  { date: "2024-04-27", count: 5 },
-  { date: "2024-04-26", count: 5 },
-  { date: "2024-05-14", count: 5 },
-  { date: "2024-05-15", count: 5 },
-  { date: "2024-05-16", count: 5 },
-  { date: "2024-05-17", count: 5 },
-  { date: "2024-05-18", count: 5 },
-  { date: "2024-05-19", count: 5 },
-  { date: "2024-05-25", count: 5 },
-  // More data...
+  { date: "2024-01-27", count: 3 },
+  { date: "2024-04-10", count: 3 },
+  { date: "2024-05-01", count: 3 },
+  { date: "2024-05-02", count: 3 },
+  { date: "2024-05-03", count: 3 },
+  { date: "2024-05-04", count: 3 },
+  { date: "2024-05-05", count: 3 },
+  { date: "2024-05-06", count: 3 },
+  { date: "2024-05-07", count: 3 },
+  { date: "2024-05-08", count: 3 },
+  { date: "2024-05-09", count: 3 },
+  { date: "2024-05-10", count: 3 },
 ];
 
 export default function page() {
   const breakpoints = {
-    md: 1149,
+    md: 1270,
   };
   const { selectedOption } = useGlobalState();
   const [smallScreen, setSmallScreen] = useState(null);
@@ -67,7 +67,7 @@ export default function page() {
         <div className="h-[800px] w-full bg-orange-400 flex">
           {selectedOption === 1 && (
             <div className="habit-card h-full w-full  bg-red-400 mt-8">
-              <div className="habit-card-container flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-2 lg:flex-row lg:space-x-6 xs:items-center  ">
+              <div className="habit-card-container flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-6 lg:flex-row lg:space-x-6 xs:items-center  ">
                 <HabitCard
                   activityData={activityData}
                   startDate={startAndEndDate.startDate}

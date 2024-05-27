@@ -5,7 +5,7 @@ export default function Header() {
     <div className="navbar bg-base-100 ">
       <div className="flex-1">
         <div
-          tabindex="0"
+          tabIndex="0"
           role="button"
           className="btn btn-ghost btn-circle avatar"
         >
@@ -20,7 +20,7 @@ export default function Header() {
       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <div
-            tabindex="0"
+            tabIndex="0"
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
@@ -32,7 +32,7 @@ export default function Header() {
             </div>
           </div>
           <ul
-            tabindex="0"
+            tabIndex="0"
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>

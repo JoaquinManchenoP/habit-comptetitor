@@ -3,12 +3,12 @@ import React from "react";
 export default function DropDownMenu() {
   return (
     <div class="dropdown dropdown-bottom">
-      <div tabindex="0" role="button" class="btn m-1">
+      <div tabIndex="0" role="button" className="btn m-1">
         Click
       </div>
       <ul
         tabindex="0"
-        class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+        className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li>
           <a>Item 1</a>
