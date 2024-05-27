@@ -3,12 +3,7 @@ import HeatMap from "../heat-map/HeatMap";
 import HabitTimeline from "../habit-timeline/HabitTimeline";
 import CardTopSection from "./card-top-section/CardTopSection";
 
-export default function HabitCard({
-  activityData,
-  startDate,
-  endDate,
-  values,
-}) {
+export default function HabitCard({ activityData, startDate, endDate }) {
   return (
     <>
       <div className="bg-blue-300 mb-10  pb-2 card shadow-xl rounded-lg ">
@@ -17,10 +12,14 @@ export default function HabitCard({
             <span className="text-black">X</span>
           </button>
         </div>
-        <CardTopSection />
+        <CardTopSection activityData={activityData} />
         <div className="h-[1/3] w-full flex items-center justify-center">
           <div className="heat-map-container h-[130px] w-full bg-orange-600 ">
-            <HeatMap values={values} startDate={startDate} endDate={endDate} />
+            <HeatMap
+              activityData={activityData}
+              startDate={startDate}
+              endDate={endDate}
+            />
           </div>
         </div>
         <div className="progress h-5 w-full bg-gray-200 rounded-none flex items-center">

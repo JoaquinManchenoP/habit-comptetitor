@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { parseISO, isSameDay, subDays } from "date-fns";
 
-export default function CardTopSection() {
+export default function CardTopSection({ activityData }) {
+  console.log(activityData);
   const [checkInBox, setCheckInBox] = useState(false);
   const [valueMenu, setValueMenu] = useState(false);
 
@@ -20,6 +22,73 @@ export default function CardTopSection() {
   const handleUserInput = (value) => {
     console.log("value", value);
   };
+
+  //Determine the day streak of user
+  const getStreak = (activityData) => {
+    const today = new Date();
+    let streak = 0;
+
+    // Sort the data in ascending order
+    const sortedData = activityData
+      .map((item) => ({
+        ...item,
+        date: parseISO(item.date),
+      }))
+      .sort((a, b) => a.date - b.date);
+
+    // Find the index of today's date in sortedData
+    const todayIndex = sortedData.findIndex((item) =>
+      isSameDay(item.date, today)
+    );
+
+    // Start checking for streaks from today's index and go backwards
+    for (let i = todayIndex; i >= 0; i--) {
+      const currentDate = sortedData[i].date;
+
+      // If the date is the same as today minus streak days, increase streak
+      if (isSameDay(currentDate, subDays(today, streak))) {
+        streak++;
+      } else {
+        // If dates are not consecutive, break the loop
+        break;
+      }
+    }
+
+    return streak;
+  };
+
+  //Determine the score of user
+  const calculateScore = (activityData) => {
+    // Get today's date and six months ago
+    const today = new Date();
+    const sixMonthsAgo = new Date();
+    sixMonthsAgo.setMonth(today.getMonth() - 6);
+
+    // Calculate the number of days between today and six months ago
+    const daysInRange = Math.floor(
+      (today - sixMonthsAgo) / (1000 * 60 * 60 * 24)
+    );
+
+    // Calculate the total possible count if there were counts for each day
+    const totalPossibleCount = daysInRange * 3; // Assuming 3 is the max count per day
+
+    // Calculate the actual count from the provided activity data
+    const actualCount = activityData.reduce(
+      (total, item) => total + item.count,
+      0
+    );
+
+    // Calculate the score as a percentage
+    let score = (actualCount / totalPossibleCount) * 100;
+
+    // Ensure the score is between 0 and 100
+    score = Math.min(Math.max(score, 0), 100);
+
+    // Round the score
+    return Math.round(score);
+  };
+
+  console.log("score", calculateScore(activityData));
 
   return (
     <div className="delete-button">
@@ -66,7 +135,7 @@ export default function CardTopSection() {
         <div className="streak-container h-full w-1/4 flex items-center justify-center">
           <div className="streak-content h-[55px] w-[90px] bg-red-400">
             <div className="main-streak-content h-4/6 w-full bg-blue-400 flex items-center justify-center">
-              <span className="text-2xl">27</span>
+              <span className="text-2xl">{getStreak(activityData)}</span>
             </div>
             <div className="streak-details flex items-centery justify-center">
               <span className="text-sm">Streak</span>
@@ -76,7 +145,7 @@ export default function CardTopSection() {
         <div className="streak-container h-full w-1/4 flex items-center justify-center">
           <div className="streak-content h-[55px] w-[90px] bg-red-400">
             <div className="main-streak-content h-4/6 w-full bg-blue-400 flex items-center justify-center">
-              <span className="text-2xl">45%</span>
+              <span className="text-2xl">{calculateScore(activityData)}</span>
             </div>
             <div className="streak-details flex items-centery justify-center">
               <span className="text-sm">Score</span>

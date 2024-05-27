@@ -4,7 +4,7 @@ import "react-calendar-heatmap/dist/styles.css";
 import { format } from "date-fns";
 import { parseISO } from "date-fns";
 
-export default function HeatMap({ values, startDate, endDate }) {
+export default function HeatMap({ activityData, startDate, endDate }) {
   const getColorForValue = (value) => {
     if (!value) {
       return "heatmap-empty";
@@ -27,7 +27,7 @@ export default function HeatMap({ values, startDate, endDate }) {
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}
-        values={values}
+        values={activityData}
         classForValue={(value) => getColorForValue(value)}
         tooltipDataAttrs={(value) => {
           return {
