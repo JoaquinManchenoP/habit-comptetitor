@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { parseISO, isSameDay, subDays } from "date-fns";
 
 export default function CardTopSection({ activityData }) {
-  console.log(activityData);
   const [checkInBox, setCheckInBox] = useState(false);
   const [valueMenu, setValueMenu] = useState(false);
 
@@ -20,7 +19,13 @@ export default function CardTopSection({ activityData }) {
   };
 
   const handleUserInput = (value) => {
-    console.log("value", value);
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
+    const checkedHabit = { date: formattedDate, count: value };
+    console.log("checkedHabit", checkedHabit);
   };
 
   //Determine the day streak of user
@@ -94,15 +99,15 @@ export default function CardTopSection({ activityData }) {
     <div className="delete-button">
       <div className="w-[450px] h-[100px] flex mx-3 ">
         <div className="check-in h-full w-1/4 flex items-center justify-center">
-          <div className="streak-content h-[55px] w-[90px] bg-red-400">
-            <div className="main-streak-content h-4/6 w-full bg-blue-400 flex items-center justify-center">
+          <div className="streak-content h-[60px] w-[95px] bg-gray-100 rounded-lg shadow-lg">
+            <div className="main-streak-content h-4/6 w-full flex items-center justify-center">
               <div className="form-control">
                 <label className="cursor-pointer label">
                   <input
                     type="checkbox"
                     checked={checkInBox}
                     onChange={handleCheckBoxchange}
-                    className="checkbox checkbox-warning"
+                    className="checkbox checkbox-warning h-7 w-7"
                   />
                 </label>
               </div>
@@ -133,8 +138,8 @@ export default function CardTopSection({ activityData }) {
           )}
         </div>
         <div className="streak-container h-full w-1/4 flex items-center justify-center">
-          <div className="streak-content h-[55px] w-[90px] bg-red-400">
-            <div className="main-streak-content h-4/6 w-full bg-blue-400 flex items-center justify-center">
+          <div className="streak-content h-[60px] w-[95px] bg-gray-100 rounded-xl shadow-lg">
+            <div className="main-streak-content h-4/6 w-full flex items-center justify-center">
               <span className="text-2xl">{getStreak(activityData)}</span>
             </div>
             <div className="streak-details flex items-centery justify-center">
@@ -143,8 +148,8 @@ export default function CardTopSection({ activityData }) {
           </div>
         </div>
         <div className="streak-container h-full w-1/4 flex items-center justify-center">
-          <div className="streak-content h-[55px] w-[90px] bg-red-400">
-            <div className="main-streak-content h-4/6 w-full bg-blue-400 flex items-center justify-center">
+          <div className="streak-content h-[55px] w-[95px] bg-gray-100 rounded-lg shadow-lg">
+            <div className="main-streak-content h-4/6 w-full flex items-center justify-center">
               <span className="text-2xl">{calculateScore(activityData)}</span>
             </div>
             <div className="streak-details flex items-centery justify-center">
@@ -153,8 +158,8 @@ export default function CardTopSection({ activityData }) {
           </div>
         </div>
         <div className="streak-container h-full w-1/4 flex items-center justify-center">
-          <div className="streak-content h-[55px] w-[90px] bg-red-400">
-            <div className="main-streak-content h-4/6 w-full bg-blue-400 flex items-center justify-center">
+          <div className="streak-content h-[60px] w-[95px] bg-gray-100 rounded-xl shadow-lg">
+            <div className="main-streak-content h-4/6 w-full flex items-center justify-center">
               <span className="text-2xl">45%</span>
             </div>
             <div className="streak-details flex items-centery justify-center">

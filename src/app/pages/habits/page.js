@@ -121,7 +121,7 @@ const activityData = [
 
 export default function page() {
   const breakpoints = {
-    md: 1270,
+    md: 1350,
   };
   const { selectedOption } = useGlobalState();
   const [smallScreen, setSmallScreen] = useState(null);
@@ -159,23 +159,35 @@ export default function page() {
           <DropDownMenu />
         </div>
       )}
-      <div className="content h-full w-full bg-blue-400">
-        <div className="h-[800px] w-full bg-orange-400 flex">
+      <div className="content h-full w-full">
+        <div className="h-[800px] w-fullflex">
           {selectedOption === 1 && (
-            <div className="habit-card h-full w-full  bg-red-400 mt-8">
-              <div className="habit-card-container flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-6 lg:flex-row lg:space-x-6 xs:items-center  ">
-                <HabitCard
-                  activityData={activityData}
-                  startDate={startAndEndDate.startDate}
-                  endDate={startAndEndDate.endDate}
-                  values={activityData}
-                />
-                <HabitCard
-                  activityData={activityData}
-                  startDate={startAndEndDate.startDate}
-                  endDate={startAndEndDate.endDate}
-                  values={activityData}
-                />
+            <div className="habit-card h-full w-full bg-gray-100 mt-2">
+              <div className="habit-card-container grid grid-cols-1 md:grid-cols-2  gap-x-3  ">
+                <div className="flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-6 lg:flex-row lg:space-x-6 xs:items-center">
+                  <HabitCard
+                    activityData={activityData}
+                    startDate={startAndEndDate.startDate}
+                    endDate={startAndEndDate.endDate}
+                    values={activityData}
+                  />
+                </div>
+                <div className="flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-6 lg:flex-row lg:space-x-6 xs:items-center">
+                  <HabitCard
+                    activityData={activityData}
+                    startDate={startAndEndDate.startDate}
+                    endDate={startAndEndDate.endDate}
+                    values={activityData}
+                  />
+                </div>
+                <div className="flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-6 lg:flex-row lg:space-x-6 xs:items-center">
+                  <HabitCard
+                    activityData={activityData}
+                    startDate={startAndEndDate.startDate}
+                    endDate={startAndEndDate.endDate}
+                    values={activityData}
+                  />
+                </div>
               </div>
             </div>
           )}

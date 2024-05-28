@@ -23,7 +23,7 @@ export default function HeatMap({ activityData, startDate, endDate }) {
   const weekdayLabels = ["S", "M", "T", "W", "T", "F", "S"];
 
   return (
-    <div className=" mr-8">
+    <div className=" w-[500px] pr-2">
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}

@@ -19,9 +19,9 @@ module.exports = {
         // Add custom breakpoints here
         xs: "480px", // Extra small devices
         sm: "640px", // Small devices (landscape phones, 640px and up)
-        md: "1060px", // Medium devices (tablets, 768px and up)
-        lg: "1270px", // Large devices (desktops, 1024px and up)
-        xl: "1280px", // Extra large devices (large desktops, 1280px and up)
+        md: "1100px", // Medium devices (tablets, 768px and up)
+        lg: "1350px", // Large devices (desktops, 1024px and up)
+        xl: "1400px", // Extra large devices (large desktops, 1280px and up)
         "2xl": "1536px", // 2 Extra large devices (larger desktops, 1536px and up)
         "3xl": "1920px", // 3 Extra large devices (even larger desktops, 1920px and up)
         // You can add more custom breakpoints if needed

@@ -8,7 +8,7 @@
 }
 /* src/styles/global.css */
 .heatmap-empty {
-  fill: #ebedf0; /* Tailwind class for heatmap-empty */
+  fill: #bccbdc; /* Tailwind class for heatmap-empty */
 }
 
 .heatmap-scale-0 {

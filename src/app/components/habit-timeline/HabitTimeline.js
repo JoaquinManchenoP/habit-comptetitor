@@ -32,7 +32,7 @@ export default function HabitTimeline({ activityData }) {
     <div className="h-[40px] w-11/12 relative bg-blue-100">
       <motion.div
         className="absolute top-0 transform -translate-y-1/2 h-6 w-8 bg-blue-500"
-        style={{ left: `${positionPercent}%`, zIndex: 1 }} // Ensure the avatar is above the line
+        style={{ left: `${positionPercent}%`, zIndex: 1 }}
         initial={{ x: -30, y: 0 }}
         animate={{ x: 0, y: 0 }}
         transition={{
@@ -42,7 +42,6 @@ export default function HabitTimeline({ activityData }) {
           stiffness: 20,
         }}
       >
-        {" "}
         <img src="/images/black-dog.png"></img>
       </motion.div>
 

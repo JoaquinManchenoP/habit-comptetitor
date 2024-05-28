@@ -12,12 +12,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-gray-100">
       <GlobalStateProvider>
         <body className={inter.className}>
           <Header />
           <div className="h-screen w-full flex flex-col justify-center items-center ">
-            <div className="content h-full w-11/12">{children}</div>
+            <div className="content h-full xs:-w-full sm:w-11/12">
+              {children}
+            </div>
           </div>
         </body>
       </GlobalStateProvider>
