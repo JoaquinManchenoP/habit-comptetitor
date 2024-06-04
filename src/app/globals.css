@@ -12,23 +12,19 @@
 }
 
 .heatmap-scale-0 {
-  fill: #ffe601; /* Tailwind class for heatmap-scale-0 */
+  fill: #ac9d16; /* Tailwind class for heatmap-scale-0 */
 }
 
 .heatmap-scale-1 {
-  fill: #ffc800; /* Tailwind class for heatmap-scale-1 */
+  fill: #f6ef94; /* Tailwind class for heatmap-scale-1 */
 }
 
 .heatmap-scale-2 {
-  fill: #ffaa00; /* Tailwind class for heatmap-scale-2 */
+  fill: #ffd000; /* Tailwind class for heatmap-scale-3 */
 }
 
 .heatmap-scale-3 {
-  fill: #ff9a00; /* Tailwind class for heatmap-scale-3 */
-}
-
-.heatmap-scale-4 {
-  fill: #ff7a00; /* Tailwind class for heatmap-scale-4 */
+  fill: #fb8a00; /* Tailwind class for heatmap-scale-4 */
 }
 
 .react-calendar-heatmap .react-calendar-heatmap__month-label {

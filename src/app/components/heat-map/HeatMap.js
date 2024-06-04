@@ -11,9 +11,9 @@ export default function HeatMap({ activityData, startDate, endDate }) {
     }
     switch (true) {
       case value.count >= 3:
-        return "heatmap-scale-4";
-      case value.count >= 2:
         return "heatmap-scale-3";
+      case value.count >= 2:
+        return "heatmap-scale-2";
       case value.count >= 1:
         return "heatmap-scale-1";
       default:

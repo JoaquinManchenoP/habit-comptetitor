@@ -117,6 +117,9 @@ const activityData = [
   { date: "2024-02-03", count: 3 },
   { date: "2024-02-02", count: 3 },
   { date: "2024-02-01", count: 3 },
+  { date: "2024-06-02", count: 3 },
+  { date: "2024-06-03", count: 2 },
+  { date: "2024-06-04", count: 1 },
 ];
 
 export default function page() {
@@ -160,10 +163,10 @@ export default function page() {
         </div>
       )}
       <div className="content h-full w-full">
-        <div className="h-[800px] w-fullflex">
+        <div className="h-[800px] w-full flex">
           {selectedOption === 1 && (
-            <div className="habit-card h-full w-full bg-gray-100 mt-2">
-              <div className="habit-card-container grid grid-cols-1 md:grid-cols-2  gap-x-3  ">
+            <div className="habit-card h-full w-full  mt-2 ">
+              <div className="habit-card-container grid grid-cols-1 md:grid-cols-2  gap-x-3 ">
                 <div className="flex justify-center xs:flex-col sm:flex-col md:flex-row md:space-x-6 lg:flex-row lg:space-x-6 xs:items-center">
                   <HabitCard
                     activityData={activityData}
