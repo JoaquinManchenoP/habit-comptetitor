@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="bg-gray-100 ">
+    <html lang="en" className="bg-gray-100 text-gray-500 ">
       <GlobalStateProvider>
         <body className={inter.className}>
           <Header />

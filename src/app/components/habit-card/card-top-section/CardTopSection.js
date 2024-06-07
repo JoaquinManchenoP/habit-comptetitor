@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { parseISO, isSameDay, subDays } from "date-fns";
+import {
+  parseISO,
+  isSameDay,
+  subDays,
+  differenceInDays,
+  format,
+  subMonths,
+} from "date-fns";
 
 export default function CardTopSection({ activityData }) {
   const [checkInBox, setCheckInBox] = useState(false);
@@ -93,7 +100,25 @@ export default function CardTopSection({ activityData }) {
     return Math.round(score);
   };
 
-  console.log("score", calculateScore(activityData));
+  // Calculate the consistency percentage
+  const calculateConsistency = (activityData) => {
+    const today = new Date();
+    const sixMonthsAgo = subMonths(today, 6); // Exactly 6 months ago
+
+    const numDays = differenceInDays(today, sixMonthsAgo) + 1; // Total days in range
+
+    // Create a set of unique dates in the activityData
+    const uniqueDates = new Set(
+      activityData.map((item) => format(parseISO(item.date), "yyyy-MM-dd"))
+    );
+
+    // Calculate the consistency percentage
+    const consistencyPercent = (uniqueDates.size / numDays) * 100;
+
+    return Math.floor(consistencyPercent); // Round to the nearest whole number
+  };
+
+  console.log("consistency", calculateConsistency(activityData));
 
   return (
     <div className="delete-button">
@@ -160,7 +185,9 @@ export default function CardTopSection({ activityData }) {
         <div className="streak-container h-full w-1/4 flex items-center justify-center">
           <div className="streak-content h-[60px] w-[95px] bg-gray-100 rounded-xl shadow-lg">
             <div className="main-streak-content h-4/6 w-full flex items-center justify-center">
-              <span className="text-2xl">45%</span>
+              <span className="text-2xl">
+                {calculateConsistency(activityData)}
+              </span>
             </div>
             <div className="streak-details flex items-centery justify-center">
               <span className="text-sm">Consistency</span>
